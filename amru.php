@@ -195,6 +195,337 @@ for($i=1; $i<=10; $i++)
 echo "End";
 ?>
 
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo "Break Statement!"."<br/>";
+for($i=1; $i<=10; $i++)
+{
+    if($i==5)
+    {
+        break;
+    }
+    echo "Hello"."\t".$i;
+    echo "<br>";
+   
+}
+echo "End"."<br>";
+echo "<br/>";
+echo "Continue Statement!"."<br/>";
+for($i=1; $i<=10; $i++)
+{
+    if($i==5)
+    {
+        continue;
+    }
+    echo "Hello"."\t".$i;
+    echo "<br>";
+   
+}
+echo "End";
+?>
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$count=0;
+for($i=1; $i<=10; $i++)
+{
+    if($i==5)
+    {
+        continue;
+    }
+    $count++;
+    echo "Hello"."\t".$i;
+    echo "<br>";
+   
+}
+echo "Total Count"."= ". $count."<br/>";
+echo "End!..";
+?>
+
+
+</body>
+</html>
+
+!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$a = 17;
+switch($a)
+{
+  case ($a>=18 && $a<=65):
+      echo "You can eligible for vote";
+      break;
+  case ($a==17):
+       echo "please wait one more year";
+       break;
+  case ($a>65):
+       echo "You are too old to vote";
+       break;
+  default:
+       echo "You are not Eligible for Vote";
+       break;
+
+}
+?>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+function amru($a)
+{
+   if($a>50)
+   {
+      echo "End<br>";
+   }
+   else
+   {
+     echo $a."<br>";
+     $a++;
+     amru($a);
+   }
+}
+amru(1);
+?>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$s="amruta bagde";
+echo strtolower($s)."<br>";
+echo strtoupper($s)."<br>";
+echo lcfirst($s)."<br>";
+echo ucfirst($s)."<br>";
+echo ucwords($s)."<br>";
+
+?>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+echo ".......Character Replace.......<br>";
+$name= "Amruta Bagde";
+echo str_replace('e','a',$name)."<br>";
+echo str_replace('a','',$name)."<br>";
+echo "<br>";
+echo ".......Word Replace.......<br>";
+$name= "Amruta Bagde";
+echo str_replace('Bagde',' ',$name)."<br>";
+echo "<br>";
+echo ".......substring Replace.......<br>";
+$name= "Amruta Bagde is very Good girl";
+echo str_replace('Good girl','Bad girl',$name)."<br>";
+?>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$a="Amruta Bagde";
+echo strrev($a)."<br>";
+$b="Hii I am Amruta Bagde and You What's Your Name?";
+echo  strrev($b);
+?>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+echo "substring<br>";
+$a="Amruta Bagde";
+echo substr($a,-9)."<br>";
+echo substr($a,2)."<br>";
+$b="Hii I am Amruta Bagde and You What's Your Name?, ohh nice and what are you doing in study now, do you graduate? Which University do you have passed." ;
+echo  substr($b,-4)."<br>";
+echo substr($b,0,59)
+?>
+</body>
+</html>
+
+<?php
+
+$T=(int)readline(" ");
+
+for($i=0; $i<$T; $i++)
+{
+    $N=(int)readline(" ");
+    $res=$N*2*5;
+    echo $res;
+    echo "\n";
+    
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$name="Hello, I am amruta bagde and nice to meet you!<br>";
+echo str_word_count($name)."<br>";
+echo strlen($name)."<br>";
+echo str_repeat($name,10);
+?>
+
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+//OTP project
+ echo rand(1,4);
+ echo "<br>";
+ echo rand(100,500);
+ echo "<br>";
+ //4 digit OTP Generated
+ echo rand(1000,9999);
+?>
+
+
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+//ceil and floor function that is used to remove decimal point.
+$a=8/3;
+echo $a."<br>";
+echo "Ceil int is:- ".ceil($a)."<br>";
+echo "floor int is:- ".floor($a);
+?>
+
+</html>
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+//pow and squrt function.
+echo "power Function is:- ".pow(2,6)."<br>";
+echo "Square root function is:- ".sqrt(9)."<br>";
+
+
+?>
+
+</html>
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+//pow and squrt function.
+echo "power Function is:- ".pow(2,6)."<br>";
+echo "Square root function is:- ".sqrt(9)."<br>";
+echo "Answer is same:- ".sqrt(pow(64,2));
+
+
+?>
+
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+//date default timezpne set() and getdate()
+date_default_timezone_set("ASIA/KOLKATA");
+echo "<pre>";
+echo print_r(getdate());
+echo "<pre>";
+$a=getdate();
+
+echo $a['month'];
+?>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+//date default timezpne set() and getdate()
+date_default_timezone_set("ASIA/KOLKATA");
+echo "<pre>";
+echo print_r(getdate());
+echo "<pre>";
+$a=getdate();
+
+echo $a['wday'];
+
+date_default_timezone_set("America/New_York");
+echo "<pre>";
+print_r(getdate());
+echo "</pre>"
+
+?>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+date_default_timezone_set("ASIA/KOLKATA");
+
+$s=strtotime('12-12-1976 12:07');
+echo date('d-m-Y h:i:s:a',$s);
+?>
+
+</body>
+</html>
+
+//getdate() date() time() date_default_timezone_set/get()
+//include and include_once
+//required and required_once
+
+
+
+<?php
+   include_once('index.html');
+   require('index.html');
+
+?>
+<body>
+          
+            <h2> About us</h2>
+            <br>
+      diagnosis, the process of determining the nature of a disease or disorder and distinguishing it from other possible conditions. The term comes from the Greek gnosis, meaning knowledge.
+
+</center>
 </body>
 </html>
 */
