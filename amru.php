@@ -528,5 +528,62 @@ echo date('d-m-Y h:i:s:a',$s);
 </center>
 </body>
 </html>
+<?php
+echo "*Copying the elements of an array to another array*\n";
+$aree = array();
+$n2 = (int)readline("Enter how many elements you want: ");
+
+for ($p = 0; $p < $n2; $p++) {
+    echo "Enter element as you want: ";
+    $element = (int)readline();
+    $aree[] = $element;
+}
+
+$dash1 = $aree;
+
+for ($i = 0; $i < $n2; $i++) {
+    echo "dash1[$i] = " . $dash1[$i] . "\n";
+}
+?>
+Storing Reversed Elements of an Array:
+php
+Copy code
+<?php
+echo "*Storing reversed elements of an array*\n";
+$aree = array();
+$n2 = (int)readline("Enter how many elements you want: ");
+
+for ($p = $n2 - 1; $p >= 0; $p--) {
+    echo "Enter element as you want: ";
+    $element = (int)readline();
+    $aree[] = $element;
+}
+
+for ($q = 0; $q < $n2; $q++) {
+    echo "aree[$q] = " . $aree[$q] . "\n";
+}
+?>
+<?php
+echo "*Storing reversed elements of an array*\n";
+$aree = array();
+$n2=(int)readline("Enter how many elements you want: ");
+
+for($p = $n2 - 1; $p >= 0; $p--){
+    echo "Enter element as you want: ";
+    $element=(int)readline();
+    $aree[]=$element;
+}
+
+for ($q=0;$q<$n2;$q++) {
+    echo "aree[$q]=".$aree[$q]."\n";
+}
+//define keyword that are use just like const keyword in c language
+?>
+<?php
+ define('Amru',78);
+ echo Amru;
+?>
 */
+
+
 
