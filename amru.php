@@ -583,7 +583,482 @@ for ($q=0;$q<$n2;$q++) {
  define('Amru',78);
  echo Amru;
 ?>
+
+ <html>
+<?php
+function show($a) {
+    ?>
+    <a href="https://www.<?php echo $a ?>.com">
+    Link
+    </a>
+    <?php
+}
+?>
+<body>
+    <?php show("google") ?>
+</body>
+</html>
+
+<?php
+	fscanf(STDIN, "%s\n", $name);           
+    echo "Hello ".$name.".\n";
+?>
+<?php
+	 $name=(String)readline(" ");
+    echo "Hello ".$name.".\n";
+?>
+<?php
+fscanf(STDIN,"%d\n",$num);
+echo $num;
+?>
+
+<?php
+    echo 'This is a test';
+?>
+
+<?php echo 'This is a test' ?>
+
+<?php echo 'We omitted the last closing tag';?>
+<br>
+<?php echo"Amruta"; echo"Nidhi";echo"Harsh";
+
+
+//get_debug_type() or gettype().. that is used to find datatype.
+<?php
+$a_bool = true;   // a bool
+$a_str  = "foo";  // a string
+$a_str2 = 'foo';  // a string
+$an_int = 12;     // an int
+
+echo get_debug_type($a_bool), "\n";
+echo get_debug_type($a_str), "\n";
+
+// If this is an integer, increment it by four
+if (is_int($an_int)) {
+    $an_int += 4;
+}
+var_dump($an_int);
+
+// If $a_bool is a string, print it out
+if (is_string($a_bool)) {
+    echo "String: $a_bool";
+}
+
+<?php
+function destroy_foo() 
+{
+    global $foo;
+    unset($foo);
+}
+
+$foo = 'bar';
+destroy_foo();
+echo $foo;
+//Null Value
+<?php
+
+error_reporting(E_ALL);
+
+$foo = NULL;
+var_dump(is_null($foo));
+
+?>
+// bool datatype in PHP
+<?php
+var_dump((bool) "");        // bool(false)
+var_dump((bool) "0");       // bool(false)
+var_dump((bool) 1);         // bool(true)
+var_dump((bool) -2);        // bool(true)
+var_dump((bool) "foo");     // bool(true)
+var_dump((bool) 2.3e5);     // bool(true)
+var_dump((bool) array(12)); // bool(true)
+var_dump((bool) array());   // bool(false)
+var_dump((bool) "false");   //bool(true)
+?>
+//Class and Objects
+<?php
+class foo
+{
+    function do_foo()
+    {
+        echo "Doing foo."; 
+    }
+}
+
+$bar = new foo;
+$bar->do_foo();
+?>
+<?php
+$obj = (object) array('1' => 'foo');
+var_dump(isset($obj->{'1'})); 
+var_dump(key($obj)); 
+>?
+<?php
+$obj = (object) 'ciao';
+echo $obj->scalar; 
+?>
+
+In PHP 7 there are a few ways to create an empty object:
+
+<?php
+$obj1 = new \stdClass; // Instantiate stdClass object
+$obj2 = new class{}; // Instantiate anonymous class
+$obj3 = (object)[]; // Cast empty array to object
+
+var_dump($obj1); // object(stdClass)#1 (0) {}
+var_dump($obj2); // object(class@anonymous)#2 (0) {}
+var_dump($obj3); // object(stdClass)#3 (0) {}
+?>
+<?php
+echo json_encode([
+    new \stdClass,
+    new class{},
+    (object)[],
+]);
+<?php
+  $object = (object) [
+    'propertyOne' => 'foo',
+    'propertyTwo' => 42,
+  ];
+  print_r($object)
+ // object and class and converting to object
+<?php 
+$num = array("Garha","sitamarhi","canada","patna");
+$obj = (object)$num;
+echo "<pre>";
+print_r($obj); 
+$newobj = new stdClass();
+$newobj->name = "India";
+$newobj->work = "Development";
+$newobj->address="patna";
+
+$new = (array)$newobj;
+echo "<pre>";
+print_r($new); 
+?>
+<?php
+$x = (object) array('a'=>'A', 'b'=>'B', 'C');
+echo '<pre>'.print_r($x, true).'</pre>';
+?>
+
+//You can create [recursive] objects with something like:
+<?php
+  $literalObjectDeclared = (object) array(
+     'foo' => (object) array(
+          'bar' => 'baz',
+          'pax' => 'vax'
+      ),
+      'moo' => 'ui'
+   );
+print $literalObjectDeclared->foo->bar;
+print "\n";
+echo "<pre>";
+print_r($literalObjectDeclared);
+?>
+<?php
+class Foo
+{
+    public $a = "I'm a!";
+    public $b = "I'm b!";
+    public $c;
+    
+    public function getB() {
+        return $this->b;
+    }
+    
+    public function setC($c) {
+        $this->c = $c;
+        return $this;
+    }
+    
+    public function getC() {
+        return $this->c;
+    }
+}
+
+print (new Foo)->a; // I'm a!
+print "\n";
+print (new Foo)->getB(); // I'm b!
+?>
+
+<?php
+$obj = (object)array("Test" => "bar");
+$var = "Test";
+echo $obj->$var;
+?>
+
+//Get Resources File
+<?php
+$fp = fopen("foo", "w");
+echo get_resource_type($fp) . "\n";
+?>
+
+//get_resource_id..(we can get id of the resource). 
+<?php
+$handle = fopen("php://stdout", "w");
+
+echo (int) $handle . "\n";
+
+echo get_resource_id($handle);
+
+?>
+
+
+var_export() Function.
+<?php
+// the var_export() function
+ 
+$var = '11.89';
+ 
+$res = var_export($var, true);
+ 
+echo $res;
+ 
+?>
+
+// Arrow Functions
+<?php
+
+$y = 1;
+ 
+$fn1 = fn($x) => $x + $y;
+// equivalent to using $y by value:
+$fn2 = function ($x) use ($y) {
+    return $x + $y;
+};
+
+var_export($fn1(3));
+print "\n";
+var_export($fn2(3));
+?>
+
+//Nested Arrow Function
+<?php
+
+$z = 1;
+$fn = fn($x) => fn($y) => $x * $y + $z;
+// Outputs 51
+var_export($fn(5)(10));
+?>
+<?php
+
+$x = 1;
+$fn = fn() => $x++; 
+$fn();
+var_export($x);  // Outputs 1
+
+//func_num_args()
+<?php
+function foo()
+{
+    echo "Number of arguments: ", func_num_args(), PHP_EOL;
+}
+
+foo(1, 2, 3);   
+?>
+
+<?php
+
+function helloWorld($ArgA, $ArgB="HelloWorld!") {
+
+  return func_num_args();
+
+}
+
+
+// The following will return 1
+
+echo $Returns1 = helloWorld("HelloWorld!");
+
+// The following will return 2
+print "\n";
+
+echo $Returns2 = helloWorld("HelloWorld!", "HowdyWorld!");
+
+?>
+
+
+<?php
+
+function var_param_func(){
+
+    if(func_num_args()==0){
+
+        echo "NO";
+
+    }
+
+    if(func_num_args()==1)
+    {
+
+        echo "YES";
+
+    }
+
+}
+var_param_func(4);
+?>
+
+<?php
+
+function DebugShow( $label, $value ) {
+
+  echo "# " . $label ;
+
+  if ( func_num_args() > 1 ) echo " = " . $value ;
+
+  echo "\n";
+
+}
+DebugShow("Amruta","Nidhi");
+DebugShow(26,10);
+
+?>
+Callback example using a Closure
+
+<?php
+// Our closure
+$double = function($a) {
+    return $a * 2;
+};
+
+// This is our range of numbers
+$numbers = range(1, 5);
+
+// Use the closure as a callback here to
+// double the size of each element in our
+// range
+$new_numbers = array_map($double, $numbers);
+
+print implode(' ', $new_numbers);
+?>
+
+//You can use "self::method_name", "static::method_name" and "parent::method_name" in callables:
+
+<?php
+class StaticCallable {
+    public static function foo($values) {
+        return array_map('self::bar', $values);
+    }
+
+    public static function bar($value) {
+        return "{$value}: 42";
+    }
+
+    public static function baz($values) {
+        return array_map('static::qux', $values);
+    }
+
+    public static function qux($value) {
+        return "{$value}: 123";
+    }
+}
+
+class StaticExtension extends StaticCallable {
+    public static function bar($value) {
+        return "{$value}: Marvin the Paranoid Android";
+    }
+
+    public static function qux($value) {
+        return "{$value}: Zaphod Beeblebrox";
+    }
+}
+
+print_r(StaticCallable::foo([1, 2, 3]));
+print_r(StaticExtension::foo([1, 2, 3]));
+
+print_r(StaticCallable::baz([1, 2, 3]));
+print_r(StaticExtension::baz([1, 2, 3]));
+?>
+
+Results:
+Array
+(
+    [0] => 1: 42
+    [1] => 2: 42
+    [2] => 3: 42
+)
+Array
+(
+    [0] => 1: 42
+    [1] => 2: 42
+    [2] => 3: 42
+)
+Array
+(
+    [0] => 1: 123
+    [1] => 2: 123
+    [2] => 3: 123
+)
+Array
+(
+    [0] => 1: Zaphod Beeblebrox
+    [1] => 2: Zaphod Beeblebrox
+    [2] => 3: Zaphod Beeblebrox
+)
+
+<?php
+class Foo {
+    public static function doAwesomeThings() {
+        FunctionCaller::callIt(self::class . '::someAwesomeMethod');
+    }
+
+    public static function someAwesomeMethod() {
+        // fantastic code goes here.
+        echo "Amruta";
+    }
+}
+
+class FunctionCaller {
+    public static function callIt(callable $func) {
+        call_user_func($func);
+    }
+}
+Foo::doAwesomeThings();
+?>
+
+<?php
+function sayHello(string $name): never
+{
+    echo "Hello, $name";
+    exit(); // if we comment this line, php throws fatal error
+}
+sayHello("John"); // result: "Hello, John"
+?>
+//instanceof method.
+<?php
+class MyClass
+{
+}
+
+class NotMyClass
+{
+}
+$a = new MyClass;
+
+var_dump($a instanceof MyClass);
+var_dump($a instanceof NotMyClass);
+?>
+
+<?php
+class ParentClass
+{
+}
+
+class MyClass extends ParentClass
+{
+}
+
+$a = new MyClass;
+
+var_dump($a instanceof MyClass);
+var_dump($a instanceof ParentClass);
+?>
+
 */
+
+
+
 
 
 
